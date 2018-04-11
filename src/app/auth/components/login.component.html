@@ -3,15 +3,15 @@
   <label>
     User name:
     <div>
-      <input pattern=".{3,}" placeholder="User" type="text" name="login">
-      <div>Please specify your login, at least three characters.</div>
+      <input pattern=".{4,}" required placeholder="User" type="text" name="login" [(ngModel)]="login" #loginCtrl="ngModel" >
+      <div>{{loginCtrl.valid ? "" : "Please specify your login, at least three characters."}}</div>
     </div>
   </label>
   <label>
     Password:
     <div>
-      <input pattern=".{3,}" placeholder="Password" type="password" name="password">
-      <div>Please specify your login, at least three characters.</div>
+      <input pattern=".{4,}" required placeholder="Password" type="password" name="password" [(ngModel)]="password" #passwordCtrl="ngModel">
+      <div>{{passwordCtrl.valid ? "" : "Please specify your login, at least three characters."}}</div>
     </div>
   </label>
   <button>Login</button>
