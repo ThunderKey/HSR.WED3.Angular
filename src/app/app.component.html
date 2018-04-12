@@ -1,1 +1,15 @@
+<nav>
+  <div class="title-bar" data-responsive-toggle="main-nav" data-hide-for="medium">
+    <button class="menu-icon" type="button" data-toggle="main-nav"></button>
+    <div class="title-bar-title">Menu</div>
+  </div>
+  <div class="top-bar" id="main-nav">
+    <div class="top-bar-left">
+      <ul class="menu vertical medium-horizontal">
+        <li routerLinkActive="is-active"><a routerLink="/dashboard">Dashboard</a></li>
+        <li routerLinkActive="is-active"><a routerLink="/transactions">Alle Transaktionen</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 <router-outlet></router-outlet>
