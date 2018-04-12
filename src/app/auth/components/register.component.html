@@ -3,37 +3,37 @@
   <label>
     First name:
     <div>
-      <input pattern=".{2,}" placeholder="First name" type="text" name="firstname">
+      <input pattern=".{2,}" placeholder="First name" type="text" name="firstname" autocomplete="given-name">
       <div>Please specify your first name.</div>
     </div>
   </label>
   <label>
     Last name:
     <div>
-      <input pattern=".{2,}" placeholder="Last name" type="text" name="lastname">
+      <input pattern=".{2,}" placeholder="Last name" type="text" name="lastname" autocomplete="family-name">
       <div>Please specify your last name.</div>
     </div>
   </label>
   <label>
     User name:
     <div>
-      <input pattern=".{3,}" placeholder="User" type="text" name="login">
+      <input pattern=".{3,}" placeholder="User" type="text" name="login" autocomplete="username">
       <div>Please specify your login, at least three characters.</div>
     </div>
   </label>
   <label>
     Password:
     <div>
-      <input pattern=".{3,}" placeholder="Password" type="password" name="password">
+      <input pattern=".{3,}" placeholder="Password" type="password" name="password" autocomplete="new-password">
       <div>Please specify your password, at least three characters.</div>
     </div>
   </label>
   <label>
     Confirm Password:
     <div>
-      <input pattern=".{3,}" placeholder="Password" type="password" name="passwordConfirm">
+      <input pattern=".{3,}" placeholder="Password" type="password" name="passwordConfirm" autocomplete="new-password">
       <div>Please confirm your password.</div>
     </div>
   </label>
-  <button>Register</button>
+  <button class="button">Register</button>
 </form>
