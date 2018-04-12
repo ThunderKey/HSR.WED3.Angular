@@ -1,1 +1,18 @@
 <h1>Dashboard</h1>
+
+<table>
+  <tr>
+    <th>Von</th>
+    <th>An</th>
+    <th>Betrag</th>
+    <th>Total</th>
+    <th>Datum</th>
+  </tr>
+  <tr *ngFor="let transaction of transactions">
+    <td>{{transaction.source}}</td>
+    <td>{{transaction.target}}</td>
+    <td>{{transaction.amount}}</td>
+    <td>{{transaction.total}}</td>
+    <td>{{transaction.date.format('LLL')}}</td>
+  </tr>
+</table>
