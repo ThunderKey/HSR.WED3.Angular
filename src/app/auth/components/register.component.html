@@ -3,36 +3,36 @@
   <label>
     First name:
     <div>
-      <input pattern=".{2,}" placeholder="First name" type="text" name="firstname">
-      <div>Please specify your first name.</div>
+      <input pattern=".{4,}" required placeholder="First name" type="text" name="firstname" [(ngModel)]="firstname" #firstnameCtrl="ngModel" >
+      <div>{{firstnameCtrl.valid? "": "Please specify your first name."}}</div>
     </div>
   </label>
   <label>
     Last name:
     <div>
-      <input pattern=".{2,}" placeholder="Last name" type="text" name="lastname">
-      <div>Please specify your last name.</div>
+      <input pattern=".{4,}" required placeholder="Last name" type="text" name="lastname" [(ngModel)]="lastname" #lastnameCtrl="ngModel" >
+      <div>{{lastnameCtrl.valid? "" : "Please specify your last name."}}</div>
     </div>
   </label>
   <label>
     User name:
     <div>
-      <input pattern=".{3,}" placeholder="User" type="text" name="login">
-      <div>Please specify your login, at least three characters.</div>
+      <input pattern=".{4,}" required placeholder="User" type="text" name="login" [(ngModel)]="login" #loginCtrl="ngModel" >
+      <div>{{loginCtrl.valid?"" : "Please specify your login, at least three characters."}}</div>
     </div>
   </label>
   <label>
     Password:
     <div>
-      <input pattern=".{3,}" placeholder="Password" type="password" name="password">
-      <div>Please specify your password, at least three characters.</div>
+      <input pattern=".{4,}" required placeholder="Password" type="password" name="password" [(ngModel)]="password" #passwordCtrl="ngModel" >
+      <div>{{passwordCtrl.valid? "" : "Please specify your password, at least three characters."}}</div>
     </div>
   </label>
   <label>
     Confirm Password:
     <div>
-      <input pattern=".{3,}" placeholder="Password" type="password" name="passwordConfirm">
-      <div>Please confirm your password.</div>
+      <input pattern=".{4,}" required placeholder="Password" type="password" name="passwordConfirm" [(ngModel)]="passwordConfirm" #passwordConfirmCtrl="ngModel" >
+      <div>{{passwordConfirmCtrl.valid? "" : "Please confirm your password."}}</div>
     </div>
   </label>
   <button>Register</button>
