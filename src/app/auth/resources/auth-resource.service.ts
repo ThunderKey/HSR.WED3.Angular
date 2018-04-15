@@ -25,7 +25,10 @@ export class AuthResourceService extends ResourceBase {
           }
           return null;
         }),
-        catchError((error: any) => of<Account>(null))
+        catchError((error: any) => {
+          console.error(error);
+          return of<Account>(null);
+        })
       );
   }
 
@@ -38,7 +41,10 @@ export class AuthResourceService extends ResourceBase {
           }
           return null;
         }),
-        catchError((error: any) => of<Credential>(null))
+        catchError((error: any) => {
+          console.error(error);
+          return of<Credential>(null);
+        })
       );
   }
 }

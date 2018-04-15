@@ -1,1 +1,43 @@
-<router-outlet></router-outlet>
+<nav>
+  <div class="title-bar" data-responsive-toggle="main-nav" data-hide-for="medium">
+    <button class="menu-icon" type="button" data-toggle="main-nav"></button>
+    <div class="title-bar-title">Menu</div>
+  </div>
+  <div *ngIf="autSvc.hasCredentials; then signedInMenu; else signedOutMenu"></div>
+  <ng-template #signedInMenu>
+    <div class="top-bar" id="main-nav">
+      <div class="top-bar-left">
+        <ul class="menu vertical medium-horizontal">
+          <li routerLinkActive="is-active"><a routerLink="/">Home</a></li>
+          <li routerLinkActive="is-active"><a routerLink="/dashboard">Dashboard</a></li>
+          <li routerLinkActive="is-active"><a routerLink="/transactions">Alle Transaktionen</a></li>
+        </ul>
+      </div>
+      <div class="top-bar-right">
+        <ul class="menu vertical medium-horizontal">
+          <li><span>{{autSvc.authenticatedUser.fullname}}</span></li>
+          <li><a (click)="doLogout()">Abmelden</a></li>
+        </ul>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template #signedOutMenu>
+    <div class="top-bar" id="main-nav">
+      <div class="top-bar-left">
+        <ul class="menu vertical medium-horizontal">
+          <li routerLinkActive="is-active"><a routerLink="/">Home</a></li>
+        </ul>
+      </div>
+      <div class="top-bar-right">
+        <ul class="menu vertical medium-horizontal">
+          <li routerLinkActive="is-active"><a routerLink="/welcome">Anmelden</a></li>
+          <li routerLinkActive="is-active"><a routerLink="/welcome/register">Registrieren</a></li>
+        </ul>
+      </div>
+    </div>
+  </ng-template>
+</nav>
+
+<main class="grid-container">
+  <router-outlet></router-outlet>
+</main>

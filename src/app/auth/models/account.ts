@@ -17,6 +17,10 @@ export class Account {
       data.accountNr);
   }
 
+  public get fullname(): string {
+    return `${this.firstname} ${this.lastname}`;
+  }
+
   toDto(): any {
     return {
       login: this.login,

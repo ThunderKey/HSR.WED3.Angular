@@ -3,16 +3,16 @@
   <label>
     User name:
     <div>
-      <input pattern=".{4,}" required placeholder="User" type="text" name="login" [(ngModel)]="login" #loginCtrl="ngModel" >
+      <input pattern=".{4,}" required placeholder="User" type="text" name="login" [(ngModel)]="login" #loginCtrl="ngModel" autocomplete="username">
       <div>{{loginCtrl.valid ? "" : "Please specify your login, at least three characters."}}</div>
     </div>
   </label>
   <label>
     Password:
     <div>
-      <input pattern=".{4,}" required placeholder="Password" type="password" name="password" [(ngModel)]="password" #passwordCtrl="ngModel">
+      <input pattern=".{4,}" required placeholder="Password" type="password" name="password" [(ngModel)]="password" #passwordCtrl="ngModel" autocomplete="current-password">
       <div>{{passwordCtrl.valid ? "" : "Please specify your login, at least three characters."}}</div>
     </div>
   </label>
-  <button>Login</button>
+  <button class="button">Login</button>
 </form>
