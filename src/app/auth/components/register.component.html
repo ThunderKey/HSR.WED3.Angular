@@ -39,10 +39,8 @@
   <label>
     Confirm Password:
     <div>
-
       <input pattern=".{4,}" required placeholder="Password" type="password" name="passwordConfirm" [(ngModel)]="passwordConfirm" #passwordConfirmCtrl="ngModel" autocomplete="new-password">
-      <div>{{passwordConfirmCtrl.valid? "" : "Please confirm your password."}}</div>
-
+      <div>{{passwordConfirmCtrl.value === passwordCtrl.value ? "" : "Please confirm your password."}}</div>
     </div>
   </label>
   <button class="button">Register</button>
