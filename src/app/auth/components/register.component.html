@@ -4,7 +4,7 @@
     First name:
     <div>
 
-      <input pattern=".{4,}" required placeholder="First name" type="text" name="firstname" [(ngModel)]="firstname" #firstnameCtrl="ngModel" >
+      <input pattern=".{4,}" required placeholder="First name" type="text" name="firstname" [(ngModel)]="firstname" #firstnameCtrl="ngModel" autocomplete="given-name">
       <div>{{firstnameCtrl.valid? "": "Please specify your first name."}}</div>
 
     </div>
@@ -13,7 +13,7 @@
     Last name:
     <div>
 
-      <input pattern=".{4,}" required placeholder="Last name" type="text" name="lastname" [(ngModel)]="lastname" #lastnameCtrl="ngModel" >
+      <input pattern=".{4,}" required placeholder="Last name" type="text" name="lastname" [(ngModel)]="lastname" #lastnameCtrl="ngModel" autocomplete="family-name">
       <div>{{lastnameCtrl.valid? "" : "Please specify your last name."}}</div>
 
     </div>
@@ -22,7 +22,7 @@
     User name:
     <div>
 
-      <input pattern=".{4,}" required placeholder="User" type="text" name="login" [(ngModel)]="login" #loginCtrl="ngModel" >
+      <input pattern=".{4,}" required placeholder="User" type="text" name="login" [(ngModel)]="login" #loginCtrl="ngModel" autocomplete="username">
       <div>{{loginCtrl.valid?"" : "Please specify your login, at least three characters."}}</div>
 
     </div>
@@ -31,7 +31,7 @@
     Password:
     <div>
 
-      <input pattern=".{4,}" required placeholder="Password" type="password" name="password" [(ngModel)]="password" #passwordCtrl="ngModel" >
+      <input pattern=".{4,}" required placeholder="Password" type="password" name="password" [(ngModel)]="password" #passwordCtrl="ngModel" autocomplete="new-password">
       <div>{{passwordCtrl.valid? "" : "Please specify your password, at least three characters."}}</div>
 
     </div>
@@ -40,7 +40,7 @@
     Confirm Password:
     <div>
 
-      <input pattern=".{4,}" required placeholder="Password" type="password" name="passwordConfirm" [(ngModel)]="passwordConfirm" #passwordConfirmCtrl="ngModel" >
+      <input pattern=".{4,}" required placeholder="Password" type="password" name="passwordConfirm" [(ngModel)]="passwordConfirm" #passwordConfirmCtrl="ngModel" autocomplete="new-password">
       <div>{{passwordConfirmCtrl.valid? "" : "Please confirm your password."}}</div>
 
     </div>
