@@ -1,8 +1,4 @@
 <nav>
-  <div class="title-bar" data-responsive-toggle="main-nav" data-hide-for="medium">
-    <button class="menu-icon" type="button" data-toggle="main-nav"></button>
-    <div class="title-bar-title">Menu</div>
-  </div>
   <div *ngIf="autSvc.hasCredentials; then signedInMenu; else signedOutMenu"></div>
   <ng-template #signedInMenu>
     <div class="top-bar" id="main-nav">
