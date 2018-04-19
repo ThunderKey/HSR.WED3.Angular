@@ -1,11 +1,15 @@
 version: '3'
 services:
   web:
-    image: node:9.7-alpine
+    build: .
+    privileged: true
     ports:
       - "4200:4200"
     volumes:
       - ..:/opt/project
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    environment:
+      - DISPLAY
     working_dir: /opt/project
     command: sh -c 'npm install && npm start'
   api:
