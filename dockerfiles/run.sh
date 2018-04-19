@@ -6,7 +6,6 @@ DIR="$(cd "$(dirname $0)"; pwd)"
 ROOT_DIR="$(dirname "$DIR")"
 
 export HOST_UID="$(id -u)"
-export HOST_GID="$(id -g)"
 
 git submodule update --init
 

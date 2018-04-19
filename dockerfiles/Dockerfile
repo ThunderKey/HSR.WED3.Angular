@@ -28,7 +28,6 @@ RUN curl -sL https://deb.nodesource.com/setup_9.x | bash - \
 RUN npm install -g npm
 
 ARG HOST_UID
-ARG HOST_GID
 
 RUN useradd --uid $HOST_UID --shell /bin/bash --create-home node \
   && echo "node:node" | chpasswd && adduser node sudo
