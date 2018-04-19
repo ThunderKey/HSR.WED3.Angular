@@ -30,8 +30,7 @@ RUN npm install -g npm
 ARG HOST_UID
 ARG HOST_GID
 
-RUN groupadd --gid $HOST_GID node \
-  && useradd --uid $HOST_UID --gid node --shell /bin/bash --password '*' --create-home node \
+RUN useradd --uid $HOST_UID --shell /bin/bash --create-home node \
   && echo "node:node" | chpasswd && adduser node sudo
 
 USER node
