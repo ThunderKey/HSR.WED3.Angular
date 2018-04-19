@@ -1,11 +1,14 @@
-FROM node:9.11
+FROM ubuntu
+
+# Install chrome
 
 RUN apt-get update && apt-get install -y \
   apt-transport-https \
   ca-certificates \
   curl \
-    gnupg \
+  gnupg \
   bash \
+  sudo \
   --no-install-recommends \
   && curl -sSL https://dl.google.com/linux/linux_signing_key.pub | apt-key add - \
   && echo "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list \
@@ -13,3 +16,22 @@ RUN apt-get update && apt-get install -y \
   google-chrome-stable \
   --no-install-recommends \
   && rm -rf /var/lib/apt/lists/*
+
+# Install node
+
+RUN curl -sL https://deb.nodesource.com/setup_9.x | bash - \
+  && apt-get update \
+  && apt-get install -y nodejs \
+  && rm -rf /var/lib/apt/lists/*
+
+# update npm via npm
+RUN npm install -g npm
+
+ARG HOST_UID
+ARG HOST_GID
+
+RUN groupadd --gid $HOST_GID node \
+  && useradd --uid $HOST_UID --gid node --shell /bin/bash --password '*' --create-home node \
+  && echo "node:node" | chpasswd && adduser node sudo
+
+USER node

@@ -1,7 +1,11 @@
 version: '3'
 services:
   web:
-    build: .
+    build:
+      context: .
+      args:
+        - HOST_UID
+        - HOST_GID
     privileged: true
     ports:
       - "4200:4200"
