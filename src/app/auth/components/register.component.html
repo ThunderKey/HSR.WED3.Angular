@@ -1,47 +1,51 @@
 <!-- TODO: Add ng specific directives/validation settings and add styling -->
 <form #f="ngForm" (ngSubmit)="doRegister(f)">
-  <label>
-    First name:
-    <div>
+  <div class="register-form grid-x grid-padding-x ">
+    <div class="small-3 cell">
+      <label for="firstname" class="text-right middle"> First name: </label>
+    </div>
+    <div class="small-9 cell">
+      <input required id="firstname" minlength="4" placeholder="First name" type="text" name="firstname" [(ngModel)]="firstname" #firstnameCtrl="ngModel" autocomplete="given-name">
+      <p class="help-text" id="passwordHelpText">{{firstnameCtrl.valid? "": "Please specify your first name."}}</p>
+    </div>
+    
+   <div class="small-3 cell">
+     <label for="lastname" class="text-right middle"> Last name: </label>
+   </div>
+    <div class="small-9 cell">
+      <input required minlength="4" id="lastname" placeholder="Last name" type="text" name="lastname" [(ngModel)]="lastname" #lastnameCtrl="ngModel" autocomplete="family-name">
+      <p class="help-text" id="passwordHelpText">{{lastnameCtrl.valid? "" : "Please specify your last name."}}</p>
+    </div>
+  
+   <div class="small-3 cell">
+     <label for="username" class="text-right middle"> User name: </label>
+   </div>
+  
+    <div class="small-9 cell">
+      <input required minlength="4" id="username" placeholder="User" type="text" name="login" [(ngModel)]="login" #loginCtrl="ngModel" autocomplete="username">
+      <p class="help-text" id="passwordHelpText">{{loginCtrl.valid?"" : "Please specify your login, at least three characters."}}</p>
+    </div>
+  
+  <div class="small-3 cell">
+     <label for="password" class="text-right middle"> Password: </label>
+   </div>
+   
+    <div class="small-9 cell">
 
-      <input required minlength="4" placeholder="First name" type="text" name="firstname" [(ngModel)]="firstname" #firstnameCtrl="ngModel" autocomplete="given-name">
-      <div class="help-text" id="passwordHelpText">{{firstnameCtrl.valid? "": "Please specify your first name."}}</div>
+      <input required minlength="4" id="password" placeholder="Password" type="password" name="password" [(ngModel)]="password" #passwordCtrl="ngModel" autocomplete="new-password">
+      <p class="help-text" id="passwordHelpText">{{passwordCtrl.valid? "" : "Please specify your password, at least three characters."}}</p>
 
     </div>
-  </label>
-  <label>
-    Last name:
-    <div>
-
-      <input required minlength="4" placeholder="Last name" type="text" name="lastname" [(ngModel)]="lastname" #lastnameCtrl="ngModel" autocomplete="family-name">
-      <div class="help-text" id="passwordHelpText">{{lastnameCtrl.valid? "" : "Please specify your last name."}}</div>
-
+  
+  <div class="small-3 cell">
+     <label for="passwordconfirm" class="text-right middle"> Confirm Password: </label>
+   </div>
+   
+    <div class="small-9 cell">
+      <input required id="passwordconfirn" [validateEqual]="this.password" placeholder="Password confirmation" type="password" name="passwordConfirm" [(ngModel)]="passwordConfirm" #passwordConfirmCtrl="ngModel" autocomplete="new-password">
+      <p class="help-text" id="passwordHelpText">{{passwordConfirmCtrl.valid ? "" : "Please confirm your password."}}</p>
     </div>
-  </label>
-  <label>
-    User name:
-    <div>
-
-      <input required minlength="4" placeholder="User" type="text" name="login" [(ngModel)]="login" #loginCtrl="ngModel" autocomplete="username">
-      <div class="help-text" id="passwordHelpText">{{loginCtrl.valid?"" : "Please specify your login, at least three characters."}}</div>
-
-    </div>
-  </label>
-  <label>
-    Password:
-    <div>
-
-      <input required minlength="4" placeholder="Password" type="password" name="password" [(ngModel)]="password" #passwordCtrl="ngModel" autocomplete="new-password">
-      <div class="help-text" id="passwordHelpText">{{passwordCtrl.valid? "" : "Please specify your password, at least three characters."}}</div>
-
-    </div>
-  </label>
-  <label>
-    Confirm Password:
-    <div>
-      <input required [validateEqual]="this.password" placeholder="Password confirmation" type="password" name="passwordConfirm" [(ngModel)]="passwordConfirm" #passwordConfirmCtrl="ngModel" autocomplete="new-password">
-      <div class="help-text" id="passwordHelpText">{{passwordConfirmCtrl.valid ? "" : "Please confirm your password."}}</div>
-    </div>
-  </label>
-  <button type="submit" [disabled]="!f.valid" class="button">Register</button>
+  
+    <button type="submit" [disabled]="!f.valid" class="button">Register</button>
+  </div>
 </form>
