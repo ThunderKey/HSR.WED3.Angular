@@ -5,7 +5,7 @@
     <div>
 
       <input required minlength="4" placeholder="First name" type="text" name="firstname" [(ngModel)]="firstname" #firstnameCtrl="ngModel" autocomplete="given-name">
-      <div>{{firstnameCtrl.valid? "": "Please specify your first name."}}</div>
+      <div class="help-text" id="passwordHelpText">{{firstnameCtrl.valid? "": "Please specify your first name."}}</div>
 
     </div>
   </label>
@@ -14,7 +14,7 @@
     <div>
 
       <input required minlength="4" placeholder="Last name" type="text" name="lastname" [(ngModel)]="lastname" #lastnameCtrl="ngModel" autocomplete="family-name">
-      <div>{{lastnameCtrl.valid? "" : "Please specify your last name."}}</div>
+      <div class="help-text" id="passwordHelpText">{{lastnameCtrl.valid? "" : "Please specify your last name."}}</div>
 
     </div>
   </label>
