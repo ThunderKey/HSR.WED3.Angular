@@ -14,5 +14,5 @@
       <div>{{passwordCtrl.valid ? "" : "Please specify your login, at least three characters."}}</div>
     </div>
   </label>
-  <button class="button">Login</button>
+  <button type="submit" [disabled]="!f.valid" class="button">Login</button>
 </form>
