@@ -1,18 +1,21 @@
 <!-- TODO: Add ng specific directives/validation settings and add styling -->
 <form #f="ngForm" (ngSubmit)="doLogin(f)">
-  <label>
-    User name:
-    <div>
-      <input required minlength="4" placeholder="User" type="text" name="login" [(ngModel)]="login" #loginCtrl="ngModel" autocomplete="username">
-      <div>{{loginCtrl.valid ? "" : "Please specify your login, at least three characters."}}</div>
+ <div class="register-form grid-x grid-padding-x">
+   <div class="small-3 cell">
+      <label for="username" class="text-right middle"> User name: </label>
     </div>
-  </label>
-  <label>
-    Password:
-    <div>
-      <input required minlength="4" placeholder="Password" type="password" name="password" [(ngModel)]="password" #passwordCtrl="ngModel" autocomplete="current-password">
-      <div>{{passwordCtrl.valid ? "" : "Please specify your login, at least three characters."}}</div>
+    <div class="small-9 cell">
+      <input required minlength="4" id="username" placeholder="User" type="text" name="login" [(ngModel)]="login" #loginCtrl="ngModel" autocomplete="username">
+      <p class="help-text" id="passwordHelpText">{{loginCtrl.valid ? "" : "Please specify your login, at least three characters."}}</p>
     </div>
-  </label>
+  
+    <div class="small-3 cell">
+      <label for="password" class="text-right middle"> Password: </label>
+    </div>
+    <div class="small-9 cell">
+      <input required minlength="4" id="password" placeholder="Password" type="password" name="password" [(ngModel)]="password" #passwordCtrl="ngModel" autocomplete="current-password">
+      <p class="help-text" id="passwordHelpText">{{passwordCtrl.valid ? "" : "Please specify your password, at least three characters."}}</p>
+    </div>
   <button type="submit" [disabled]="!f.valid" class="button">Login</button>
+  </div>
 </form>
