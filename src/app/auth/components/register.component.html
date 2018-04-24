@@ -23,7 +23,7 @@
     <div>
 
       <input required minlength="4" placeholder="User" type="text" name="login" [(ngModel)]="login" #loginCtrl="ngModel" autocomplete="username">
-      <div>{{loginCtrl.valid?"" : "Please specify your login, at least three characters."}}</div>
+      <div class="help-text" id="passwordHelpText">{{loginCtrl.valid?"" : "Please specify your login, at least three characters."}}</div>
 
     </div>
   </label>
@@ -32,7 +32,7 @@
     <div>
 
       <input required minlength="4" placeholder="Password" type="password" name="password" [(ngModel)]="password" #passwordCtrl="ngModel" autocomplete="new-password">
-      <div>{{passwordCtrl.valid? "" : "Please specify your password, at least three characters."}}</div>
+      <div class="help-text" id="passwordHelpText">{{passwordCtrl.valid? "" : "Please specify your password, at least three characters."}}</div>
 
     </div>
   </label>
@@ -40,7 +40,7 @@
     Confirm Password:
     <div>
       <input required [validateEqual]="this.password" placeholder="Password confirmation" type="password" name="passwordConfirm" [(ngModel)]="passwordConfirm" #passwordConfirmCtrl="ngModel" autocomplete="new-password">
-      <div>{{passwordConfirmCtrl.valid ? "" : "Please confirm your password."}}</div>
+      <div class="help-text" id="passwordHelpText">{{passwordConfirmCtrl.valid ? "" : "Please confirm your password."}}</div>
     </div>
   </label>
   <button type="submit" [disabled]="!f.valid" class="button">Register</button>
