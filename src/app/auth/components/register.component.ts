@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {NgForm} from '@angular/forms';
+import {NgForm, MinLengthValidator} from '@angular/forms';
 
 import {NavigationService} from '../../core';
 
