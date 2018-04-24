@@ -43,5 +43,5 @@
       <div>{{passwordConfirmCtrl.value === passwordCtrl.value ? "" : "Please confirm your password."}}</div>
     </div>
   </label>
-  <button class="button">Register</button>
+  <button type="submit" [disabled]="!f.valid" class="button">Register</button>
 </form>
