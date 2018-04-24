@@ -3,14 +3,14 @@
   <label>
     User name:
     <div>
-      <input required minlength="4" placeholder="User" type="text" name="login" ngModel #loginCtrl="ngModel" autocomplete="username">
+      <input required minlength="4" placeholder="User" type="text" name="login" [(ngModel)]="login" #loginCtrl="ngModel" autocomplete="username">
       <div>{{loginCtrl.valid ? "" : "Please specify your login, at least three characters."}}</div>
     </div>
   </label>
   <label>
     Password:
     <div>
-      <input required minlength="4" placeholder="Password" type="password" name="password" ngModel #passwordCtrl="ngModel" autocomplete="current-password">
+      <input required minlength="4" placeholder="Password" type="password" name="password" [(ngModel)]="password" #passwordCtrl="ngModel" autocomplete="current-password">
       <div>{{passwordCtrl.valid ? "" : "Please specify your login, at least three characters."}}</div>
     </div>
   </label>

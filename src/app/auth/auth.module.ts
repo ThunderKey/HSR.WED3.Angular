@@ -8,13 +8,15 @@ import {AuthResourceService, TokenInterceptor} from './resources';
 import {LoginComponent, LogoutComponent,
   RegisterComponent} from './components';
 import {SharedModule} from '../shared/shared.module';
+import {EqualValidator} from '../shared/validators';
 
 const EXPORTED_DECLARATIONS = [
   LoginComponent, LogoutComponent, RegisterComponent
   // TODO: Add declarations here, if additional components should be exported
 ];
 const INTERNAL_DECLARATIONS = [
-  ...EXPORTED_DECLARATIONS
+  ...EXPORTED_DECLARATIONS,
+  EqualValidator,
   // TODO: Add declarations here, if additional components should be registered for the Auth module
 ];
 const EXPORTS = [
