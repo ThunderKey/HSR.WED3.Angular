@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {NgForm} from '@angular/forms';
 
 import {TransactionResourceService} from '../resources';
 import {Transaction} from '../models';
@@ -17,8 +18,8 @@ export class CreateTransactionComponent {
   public amount: number;
 
   constructor(private resource: TransactionResourceService, private auth: AuthService) {
-    console.log(auth.authenticatedUser);
-    this.sourceNr = auth.authenticatedUser.accountNr;
+    if(auth.authenticatedUser)
+      this.sourceNr = auth.authenticatedUser.accountNr;
   }
 
   public createTransaction(f: NgForm): boolean {
