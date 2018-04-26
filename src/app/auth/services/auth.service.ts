@@ -20,7 +20,7 @@ export class AuthService {
 
   constructor(private resource: AuthResourceService, private tokenStore: SecurityTokenStore) {
     if (tokenStore.storedValue) {
-      this.authUser = Account.fromInfoDto(tokenStore.storedValue);
+      this.authUser = Account.fromInfoDto(tokenStore.storedValue.owner);
     }
   }
 
