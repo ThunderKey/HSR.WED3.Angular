@@ -1,9 +1,10 @@
 import {NgModule, ModuleWithProviders} from '@angular/core';
+import {FormsModule} from '@angular/forms';
 
 import {SharedModule} from '../shared/shared.module';
 
 import {DashbaordRoutingModule} from './dashboard-routing.module';
-import {DashboardComponent} from './components';
+import {DashboardComponent, CreateTransactionComponent} from './components';
 import {TransactionResourceService} from './resources';
 
 const EXPORTED_DECLARATIONS = [
@@ -11,7 +12,8 @@ const EXPORTED_DECLARATIONS = [
   // Declarations (Components / Directives) which can be used outside the Module
 ];
 const INTERNAL_DECLARATIONS = [
-  ...EXPORTED_DECLARATIONS
+  ...EXPORTED_DECLARATIONS,
+  CreateTransactionComponent,
   // Declarations (Components / Directives) which can be used inside the Module
 ];
 const EXPORTS = [
@@ -23,7 +25,9 @@ const EXPORTS = [
   declarations: INTERNAL_DECLARATIONS,
   imports: [
     // Other Modules to import (imports the exported Components/Directives from the other module)
-    SharedModule, DashbaordRoutingModule
+    FormsModule,
+    SharedModule,
+    DashbaordRoutingModule
   ],
   exports: EXPORTS,
   providers: [
