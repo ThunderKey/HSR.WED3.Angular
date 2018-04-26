@@ -1,9 +1,9 @@
 <form #f="ngForm" (ngSubmit)="createTransaction(f)">
-  <label for="source">From:</label>
-  <input id="source" name="source" disabled type="text" [ngModel]="source_account">
+  <label for="sourceNr">From:</label>
+  <input id="sourceNr" name="sourceNr" disabled type="text" [ngModel]="sourceNr">
 
-  <label for="target">To:</label>
-  <input id="target" name="target" [(ngModel)]="target_account" type="text" placeholder="Target Account Number">
+  <label for="targetNr">To:</label>
+  <input id="targetNr" name="targetNr" [(ngModel)]="targetNr" type="text" placeholder="Target Account Number">
 
   <label for="amount">Amount [CHF]:</label>
   <input min="0.05" step="0.05" id="amount" name="amount" [(ngModel)]="amount" type="number" placeholder="Amount in CHF">
