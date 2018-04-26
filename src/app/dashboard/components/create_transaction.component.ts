@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {NgForm} from '@angular/forms';
 
 import {TransactionResourceService} from '../resources';
@@ -13,9 +13,14 @@ import {AuthService} from '../../auth/services';
 })
 export class CreateTransactionComponent {
 
-  public sourceNr: number;
-  public targetNr: number;
+  public sourceNr: string;
+  public targetNr: string;
   public amount: number;
+
+  public errorMessage: string;
+  public successMessage: string;
+
+  @Output() transactionAdded: EventEmitter<Transaction> = new EventEmitter();
 
   constructor(private resource: TransactionResourceService, private auth: AuthService) {
     if(auth.authenticatedUser)
@@ -24,10 +29,19 @@ export class CreateTransactionComponent {
 
   public createTransaction(f: NgForm): boolean {
     if (f && f.valid) {
-      this.isProcessing = true;
-      console.log("source:", this.sourceNr);
-      console.log("target:", this.targetNr);
-      console.log("amount:", this.amount);
+      this.errorMessage = this.successMessage = null;
+      this.resource.createTransaction(this.targetNr, this.amount).subscribe(
+        (transaction: Transaction) => {
+          if(transaction) {
+            this.targetNr = null;
+            this.amount = null;
+            this.successMessage = `Transaction to ${transaction.target} succeeded! New balance ${transaction.total} CHF`;
+            this.transactionAdded.emit(transaction);
+          } else {
+            this.errorMessage = 'Could not transfer the money. Please check your transaction.';
+          }
+        }
+      );
     }
     return false;
   }

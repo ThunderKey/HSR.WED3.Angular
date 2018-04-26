@@ -1,12 +1,14 @@
 <form #f="ngForm" (ngSubmit)="createTransaction(f)">
   <label for="sourceNr">From:</label>
-  <input id="sourceNr" name="sourceNr" disabled type="number" [ngModel]="sourceNr">
+  <input id="sourceNr" name="sourceNr" disabled type="text" [ngModel]="sourceNr">
 
   <label for="targetNr">To:</label>
-  <input id="targetNr" name="targetNr" [(ngModel)]="targetNr" type="number" placeholder="Target Account Number">
+  <input id="targetNr" name="targetNr" [(ngModel)]="targetNr" type="text" placeholder="Target Account Number">
 
   <label for="amount">Amount [CHF]:</label>
   <input min="0.05" step="0.05" id="amount" name="amount" [(ngModel)]="amount" type="number" placeholder="Amount in CHF">
 
   <button type="submit" class="button">Pay</button>
+  <div *ngIf="errorMessage" class="callout alert">{{errorMessage}}</div>
+  <div *ngIf="successMessage" class="callout success">{{successMessage}}</div>
 </form>

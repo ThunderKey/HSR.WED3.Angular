@@ -2,11 +2,11 @@ export class Account {
   constructor(public login: string,
               public firstname: string,
               public lastname: string,
-              public accountNr: number) {
+              public accountNr: string) {
   }
 
   public static fromDto(data: any): Account {
-    return new Account(data.login, data.firstname, data.lastname, parseInt(data.accountNr));
+    return new Account(data.login, data.firstname, data.lastname, data.accountNr);
   }
 
   public static fromInfoDto(data: any): Account {

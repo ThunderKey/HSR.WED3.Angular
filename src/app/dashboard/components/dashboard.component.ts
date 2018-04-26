@@ -15,7 +15,15 @@ export class DashboardComponent implements OnInit {
   constructor(private resource: TransactionResourceService) {
   }
 
+  public onTransactionAdded(transaction: Transaction) {
+    this.updateTransactions();
+  }
+
   ngOnInit() {
+    this.updateTransactions();
+  }
+
+  private updateTransactions() {
     this.resource.getNewestTransactions().subscribe(
       (data: Array<Transaction>) => {
         this.transactions = data;
