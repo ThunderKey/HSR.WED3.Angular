@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
+import moment from '../../core/utils/moment_and_overrides';
+
 import {TransactionResourceService} from '../resources';
 import {Transaction} from '../models';
 
@@ -12,11 +14,21 @@ export class TransactionsComponent implements OnInit {
 
   public transactions: Array<Transaction> = []
 
-  constructor(private resource: TransactionResourceService) {
-  }
+  public years: Array<object> = [];
+  public months: Array<object> = moment.months().map((month, i) => {
+    return {text: month, value: i};
+  });
 
-  public onTransactionAdded(transaction: Transaction) {
-    this.updateTransactions();
+  public year: number;
+  public month: string;
+
+  constructor(private resource: TransactionResourceService) {
+    this.month = new Date().getMonth();
+    let currentYear = this.year = new Date().getFullYear();
+    for(let i = 0; i < 3; i++) {
+      let year = currentYear - i;
+      this.years.push({text: year, value: year});
+    }
   }
 
   ngOnInit() {
@@ -24,7 +36,9 @@ export class TransactionsComponent implements OnInit {
   }
 
   private updateTransactions() {
-    this.resource.getNewestTransactions().subscribe(
+    let start = new Date(this.year, this.month, 1);
+    let end = moment(start).endOf('month');
+    this.resource.getTransactions(start, end).subscribe(
       (data: Array<Transaction>) => {
         this.transactions = data;
       }
