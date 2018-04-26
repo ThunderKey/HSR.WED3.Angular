@@ -3,12 +3,13 @@ import {FormsModule} from '@angular/forms';
 
 import {SharedModule} from '../shared/shared.module';
 
-import {DashbaordRoutingModule} from './dashboard-routing.module';
-import {DashboardComponent, CreateTransactionComponent} from './components';
+import {TransactionsRoutingModule} from './transactions-routing.module';
+import {DashboardComponent, CreateTransactionComponent, TransactionsComponent} from './components';
 import {TransactionResourceService} from './resources';
 
 const EXPORTED_DECLARATIONS = [
   DashboardComponent,
+  TransactionsComponent,
   // Declarations (Components / Directives) which can be used outside the Module
 ];
 const INTERNAL_DECLARATIONS = [
@@ -27,7 +28,7 @@ const EXPORTS = [
     // Other Modules to import (imports the exported Components/Directives from the other module)
     FormsModule,
     SharedModule,
-    DashbaordRoutingModule
+    TransactionsRoutingModule
   ],
   exports: EXPORTS,
   providers: [
@@ -37,10 +38,10 @@ const EXPORTS = [
     TransactionResourceService,
   ]
 })
-export class DashboardModule {
+export class TransactionsModule {
   static forRoot(config?: {}): ModuleWithProviders {
     return {
-      ngModule: DashboardModule,
+      ngModule: TransactionsModule,
       providers: [ ]
     };
   }
