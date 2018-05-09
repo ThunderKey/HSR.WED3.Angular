@@ -37,7 +37,7 @@ export class TransactionsComponent implements OnInit {
 
   private updateTransactions() {
     let start = moment(new Date(this.year, this.month, 1));
-    let end = start.endOf('month');
+    let end = start.clone().endOf('month');
     this.resource.getTransactions(start, end).subscribe(
       (data: Array<Transaction>) => {
         this.transactions = data;
