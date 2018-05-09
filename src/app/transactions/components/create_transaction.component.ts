@@ -5,6 +5,7 @@ import {TransactionResourceService} from '../resources';
 import {Transaction} from '../models';
 
 import {AuthService} from '../../auth/services';
+import {Account} from '../../auth/models';
 
 @Component({
   selector: 'wed-create-transaction',
@@ -50,7 +51,7 @@ export class CreateTransactionComponent {
   public setTargetAccount(){
     if (this.targetNr){
       this.resource.getAccount(this.targetNr).subscribe(
-        (account: Account)=>{
+        (account: Account) => {
           this.targetAccount = account;
         }
       );
