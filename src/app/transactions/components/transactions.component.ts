@@ -20,7 +20,7 @@ export class TransactionsComponent implements OnInit {
   });
 
   public year: number;
-  public month: string;
+  public month: number;
 
   constructor(private resource: TransactionResourceService) {
     this.month = new Date().getMonth();
@@ -36,8 +36,8 @@ export class TransactionsComponent implements OnInit {
   }
 
   private updateTransactions() {
-    let start = new Date(this.year, this.month, 1);
-    let end = moment(start).endOf('month');
+    let start = moment(new Date(this.year, this.month, 1));
+    let end = start.endOf('month');
     this.resource.getTransactions(start, end).subscribe(
       (data: Array<Transaction>) => {
         this.transactions = data;
