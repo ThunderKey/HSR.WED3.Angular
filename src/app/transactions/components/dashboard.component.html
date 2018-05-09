@@ -6,25 +6,6 @@
   </div>
 
   <div class="cell small-12 medium-9">
-    <table class="hover stack">
-      <thead>
-        <tr>
-          <th>Von</th>
-          <th>An</th>
-          <th>Betrag</th>
-          <th>Total</th>
-          <th>Datum</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let transaction of transactions">
-          <td>{{transaction.source}}</td>
-          <td>{{transaction.target}}</td>
-          <td>{{transaction.amount}}</td>
-          <td>{{transaction.total}}</td>
-          <td>{{transaction.date.format('LLL')}}</td>
-        </tr>
-      </tbody>
-    </table>
+    <wed-transaction-table [transactions]="transactions"></wed-transaction-table>
   </div>
 </div>

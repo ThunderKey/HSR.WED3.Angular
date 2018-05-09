@@ -4,7 +4,12 @@ import {FormsModule} from '@angular/forms';
 import {SharedModule} from '../shared/shared.module';
 
 import {TransactionsRoutingModule} from './transactions-routing.module';
-import {DashboardComponent, CreateTransactionComponent, TransactionsComponent} from './components';
+import {
+  DashboardComponent,
+  CreateTransactionComponent,
+  TransactionsComponent,
+  TransactionTableComponent
+} from './components';
 import {TransactionResourceService} from './resources';
 
 const EXPORTED_DECLARATIONS = [
@@ -15,6 +20,7 @@ const EXPORTED_DECLARATIONS = [
 const INTERNAL_DECLARATIONS = [
   ...EXPORTED_DECLARATIONS,
   CreateTransactionComponent,
+  TransactionTableComponent,
   // Declarations (Components / Directives) which can be used inside the Module
 ];
 const EXPORTS = [

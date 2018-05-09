@@ -12,7 +12,7 @@ import {Transaction} from '../models';
 })
 export class TransactionsComponent implements OnInit {
 
-  public transactions: Array<Transaction> = []
+  public transactions: Array<Transaction> = [];
 
   public years: Array<object> = [];
   public months: Array<object> = moment.months().map((month, i) => {
