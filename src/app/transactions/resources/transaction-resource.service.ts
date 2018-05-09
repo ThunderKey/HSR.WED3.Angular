@@ -9,6 +9,8 @@ import moment from '../../core/utils/moment_and_overrides';
 import {ResourceBase} from '../../core';
 
 import {Transaction} from '../models';
+import {Account} from '../../auth/models';
+
 
 
 @Injectable()
@@ -31,6 +33,22 @@ export class TransactionResourceService extends ResourceBase {
 
   public createTransaction(target: string, amount: number): Observable<Transaction> {
     return this.handleTransaction(this.post('/accounts/transactions', {target, amount}));
+  }
+
+  public getAccount(accountNr: string):Observable<Account>{
+    let request = this.get(`/accounts/${accountNr}`);
+    return request.pipe(
+      map((response: any) => {
+        if (response) {
+          return Account.fromDto(response);
+        }
+        return null;
+      }),
+      catchError((error: any) => {
+        console.error(error);
+        return of<Account>(null);
+      })
+    );
   }
 
   private handleTransactionList(request: Observable<any>): Observable<Array<Transaction>> {

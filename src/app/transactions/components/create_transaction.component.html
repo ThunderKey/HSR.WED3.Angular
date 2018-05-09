@@ -3,7 +3,10 @@
   <input id="sourceNr" name="sourceNr" disabled type="text" [ngModel]="sourceNr">
 
   <label for="targetNr">To:</label>
-  <input id="targetNr" name="targetNr" [(ngModel)]="targetNr" type="text" placeholder="Target Account Number">
+  <input required (keyup)="setTargetAccount()" id="targetNr" name="targetNr" [(ngModel)]="targetNr" type="text" placeholder="Target Account Number" #targetNrCtrl="ngModel">
+  <div *ngIf="!targetNrCtrl.valid" class="help-text" > please specify the target account number! </div>
+  <div *ngIf="targetAccount" class="help-text" > {{ targetAccount.fullname}}</div>
+  <div *ngIf="targetNrCtrl.valid && !targetAccount" class="help-text"> Unknown account number specified! </div>
 
   <label for="amount">Amount [CHF]:</label>
   <input min="0.05" step="0.05" id="amount" name="amount" [(ngModel)]="amount" type="number" placeholder="Amount in CHF">

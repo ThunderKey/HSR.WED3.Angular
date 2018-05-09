@@ -16,6 +16,7 @@ export class CreateTransactionComponent {
   public sourceNr: string;
   public targetNr: string;
   public amount: number;
+  public targetAccount: Account;
 
   public errorMessage: string;
   public successMessage: string;
@@ -35,6 +36,7 @@ export class CreateTransactionComponent {
           if(transaction) {
             this.targetNr = null;
             this.amount = null;
+            this.targetAccount = null;
             this.successMessage = `Transaction to ${transaction.target} succeeded! New balance ${transaction.total} CHF`;
             this.transactionAdded.emit(transaction);
           } else {
@@ -44,5 +46,16 @@ export class CreateTransactionComponent {
       );
     }
     return false;
+  }
+  public setTargetAccount(){
+    if (this.targetNr){
+      this.resource.getAccount(this.targetNr).subscribe(
+        (account: Account)=>{
+          this.targetAccount = account;
+        }
+      );
+    } else {
+      this.targetAccount = null;
+    }
   }
 }

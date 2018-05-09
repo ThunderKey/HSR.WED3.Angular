@@ -6,6 +6,9 @@ export class Account {
   }
 
   public static fromDto(data: any): Account {
+    if(data.owner){
+      return new Account(data.login, data.owner.firstname, data.owner.lastname, data.accountNr);
+    }
     return new Account(data.login, data.firstname, data.lastname, data.accountNr);
   }
 
