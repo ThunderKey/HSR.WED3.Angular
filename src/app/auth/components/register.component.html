@@ -45,7 +45,8 @@
       <input required id="passwordconfirn" [validateEqual]="this.password" placeholder="Password confirmation" type="password" name="passwordConfirm" [(ngModel)]="passwordConfirm" #passwordConfirmCtrl="ngModel" autocomplete="new-password">
       <p class="help-text" id="passwordHelpText">{{passwordConfirmCtrl.valid ? "" : "Please confirm your password."}}</p>
     </div>
-  
-    <button type="submit" [disabled]="!f.valid" class="button">Register</button>
+    <div class="small-9 cell small-offset-3">
+      <button type="submit" [disabled]="!f.valid" class="button">Register</button>
+    </div>
   </div>
 </form>

@@ -16,6 +16,8 @@
       <input required minlength="4" id="password" placeholder="Password" type="password" name="password" [(ngModel)]="password" #passwordCtrl="ngModel" autocomplete="current-password">
       <p class="help-text" id="passwordHelpText">{{passwordCtrl.valid ? "" : "Please specify your password, at least three characters."}}</p>
     </div>
-  <button type="submit" [disabled]="!f.valid" class="button">Login</button>
+    <div class="small-9 cell small-offset-3">
+      <button type="submit" [disabled]="!f.valid" class="button">Login</button>
+    </div>
   </div>
 </form>
