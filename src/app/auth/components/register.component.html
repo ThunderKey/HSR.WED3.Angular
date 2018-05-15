@@ -6,7 +6,7 @@
     </div>
     <div class="small-9 cell">
       <input required id="firstname" minlength="4" placeholder="First name" type="text" name="firstname" [(ngModel)]="firstname" #firstnameCtrl="ngModel" autocomplete="given-name">
-      <p class="help-text" id="passwordHelpText">{{firstnameCtrl.valid? "": "Please specify your first name."}}</p>
+      <div *ngIf="!firstnameCtrl.valid" class="help-text"> Please specify your first name. </div>
     </div>
     
    <div class="small-3 cell">
@@ -14,7 +14,7 @@
    </div>
     <div class="small-9 cell">
       <input required minlength="4" id="lastname" placeholder="Last name" type="text" name="lastname" [(ngModel)]="lastname" #lastnameCtrl="ngModel" autocomplete="family-name">
-      <p class="help-text" id="passwordHelpText">{{lastnameCtrl.valid? "" : "Please specify your last name."}}</p>
+      <div *ngIf="!lastnameCtrl.valid" class="help-text"> Please specify your last name. </div>
     </div>
   
    <div class="small-3 cell">
@@ -23,7 +23,7 @@
   
     <div class="small-9 cell">
       <input required minlength="4" id="username" placeholder="User" type="text" name="login" [(ngModel)]="login" #loginCtrl="ngModel" autocomplete="username">
-      <p class="help-text" id="passwordHelpText">{{loginCtrl.valid?"" : "Please specify your login, at least three characters."}}</p>
+      <div *ngIf="!loginCtrl.valid" class="help-text"> Please specify your login, at least three characters. </div>
     </div>
   
   <div class="small-3 cell">
@@ -33,8 +33,7 @@
     <div class="small-9 cell">
 
       <input required minlength="4" id="password" placeholder="Password" type="password" name="password" [(ngModel)]="password" #passwordCtrl="ngModel" autocomplete="new-password">
-      <p class="help-text" id="passwordHelpText">{{passwordCtrl.valid? "" : "Please specify your password, at least three characters."}}</p>
-
+      <div *ngIf="!passwordCtrl.valid" class="help-text"> Please specify your password, at least three characters. </div>
     </div>
   
   <div class="small-3 cell">
@@ -43,7 +42,7 @@
    
     <div class="small-9 cell">
       <input required id="passwordconfirn" [validateEqual]="this.password" placeholder="Password confirmation" type="password" name="passwordConfirm" [(ngModel)]="passwordConfirm" #passwordConfirmCtrl="ngModel" autocomplete="new-password">
-      <p class="help-text" id="passwordHelpText">{{passwordConfirmCtrl.valid ? "" : "Please confirm your password."}}</p>
+      <div *ngIf="!passwordConfirmCtrl.valid" class="help-text"> Please confirm your password.</div>
     </div>
     <div class="small-9 cell small-offset-3">
       <button type="submit" [disabled]="!f.valid" class="button">Register</button>
