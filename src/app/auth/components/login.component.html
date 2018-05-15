@@ -6,7 +6,7 @@
     </div>
     <div class="small-9 cell">
       <input required minlength="4" id="username" placeholder="User" type="text" name="login" [(ngModel)]="login" #loginCtrl="ngModel" autocomplete="username">
-      <p class="help-text" id="passwordHelpText">{{loginCtrl.valid ? "" : "Please specify your login, at least three characters."}}</p>
+        <div *ngIf="!loginCtrl.valid" class="help-text"> Please specify your login, at least three characters. </div>
     </div>
   
     <div class="small-3 cell">
@@ -14,7 +14,7 @@
     </div>
     <div class="small-9 cell">
       <input required minlength="4" id="password" placeholder="Password" type="password" name="password" [(ngModel)]="password" #passwordCtrl="ngModel" autocomplete="current-password">
-      <p class="help-text" id="passwordHelpText">{{passwordCtrl.valid ? "" : "Please specify your password, at least three characters."}}</p>
+      <div *ngIf="!passwordCtrl.valid" class="help-text"> Please specify your password, at least three characters. </div>
     </div>
     <div class="small-9 cell small-offset-3">
       <button type="submit" [disabled]="!f.valid" class="button">Login</button>
