@@ -16,7 +16,6 @@ export class EqualValidator implements Validator {
   public validateEqual: string;
 
   validate(control: AbstractControl): ValidationErrors {
-    console.log('compare', control.value, this.validateEqual);
     if(control.value !== this.validateEqual) {
       return { hasError: true };
     }
