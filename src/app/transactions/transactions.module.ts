@@ -12,6 +12,8 @@ import {
 } from './components';
 import {TransactionResourceService} from './resources';
 
+import {CurrencyValidator} from '../shared/validators';
+
 const EXPORTED_DECLARATIONS = [
   DashboardComponent,
   TransactionsComponent,
@@ -21,6 +23,7 @@ const INTERNAL_DECLARATIONS = [
   ...EXPORTED_DECLARATIONS,
   CreateTransactionComponent,
   TransactionTableComponent,
+  CurrencyValidator,
   // Declarations (Components / Directives) which can be used inside the Module
 ];
 const EXPORTS = [

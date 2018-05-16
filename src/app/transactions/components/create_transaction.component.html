@@ -9,7 +9,8 @@
   <div *ngIf="targetNrCtrl.valid && !targetAccount" class="help-text"> Unknown account number specified! </div>
 
   <label for="amount">Amount [CHF]:</label>
-  <input min="0.05" step="0.05" id="amount" name="amount" [(ngModel)]="amount" type="number" placeholder="Amount in CHF">
+  <input required min="0.05" step="0.05" validateCurrency id="amount" name="amount" [(ngModel)]="amount" type="number" placeholder="Amount in CHF" #amountCtrl="ngModel">
+  <div *ngIf="!amountCtrl.valid" class="help-text" > invalid amount! </div>
 
   <button type="submit" class="button">Pay</button>
   <div *ngIf="errorMessage" class="callout alert">{{errorMessage}}</div>
