@@ -5,19 +5,16 @@ import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {AuthService, SecurityTokenStore} from './services';
 import {AuthResourceService, TokenInterceptor} from './resources';
 
-import {LoginComponent, LogoutComponent,
-  RegisterComponent} from './components';
+import {LoginComponent, RegisterComponent} from './components';
 import {SharedModule} from '../shared/shared.module';
 import {EqualValidator} from '../shared/validators';
 
 const EXPORTED_DECLARATIONS = [
-  LoginComponent, LogoutComponent, RegisterComponent
-  // TODO: Add declarations here, if additional components should be exported
+  LoginComponent, RegisterComponent
 ];
 const INTERNAL_DECLARATIONS = [
   ...EXPORTED_DECLARATIONS,
   EqualValidator,
-  // TODO: Add declarations here, if additional components should be registered for the Auth module
 ];
 const EXPORTS = [
   ...EXPORTED_DECLARATIONS
@@ -38,8 +35,6 @@ export class AuthModule {
       ngModule: AuthModule,
       providers: [
         // DI Providers (Services, Tokens, Factories...) to be used globally and instantiate only once
-
-        // TODO: Add services/guards/... here, if additional classes are placed within the Auth moduley
         AuthService,
         SecurityTokenStore,
         {

@@ -12,9 +12,4 @@ import {AuthService} from './auth/services';
 export class AppComponent {
   constructor(private autSvc: AuthService, private navigationSvc: NavigationService) {
   }
-
-  doLogout() {
-    this.autSvc.logout();
-    this.navigationSvc.goToHome();
-  }
 }

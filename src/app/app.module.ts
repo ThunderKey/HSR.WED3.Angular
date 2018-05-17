@@ -8,6 +8,7 @@ import {WelcomeModule} from './welcome/welcome.module';
 import {TransactionsModule} from './transactions/transactions.module';
 
 import {AppComponent} from './app.component';
+import {LogoutComponent} from './auth/components';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AuthModule} from './auth/auth.module';
@@ -15,7 +16,8 @@ import {AuthModule} from './auth/auth.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,7 @@ import {AuthModule} from './auth/auth.module';
     TransactionsModule.forRoot(),
     WelcomeModule.forRoot(),
 
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [
 
