@@ -19,8 +19,12 @@ export class RegisterComponent implements OnInit {
   public lastname: string;
 
   public isProcessing = false;
+  public errorMessage: string;
 
   constructor(private autSvc: AuthService, private navigationSvc: NavigationService) {
+    autSvc.registerFailed.subscribe(() => {
+      this.errorMessage = "Could not register this account";
+    });
   }
 
   ngOnInit() {
@@ -30,7 +34,8 @@ export class RegisterComponent implements OnInit {
         if (credentials) {
           this.navigationSvc.goToDashboard();
         }
-      });
+      }
+    );
   }
 
   public doRegister(f: NgForm): boolean {
@@ -40,7 +45,8 @@ export class RegisterComponent implements OnInit {
         f.value.login,
         f.value.password,
         f.value.firstname,
-        f.value.lastname));
+        f.value.lastname,
+      ));
     }
     return false;
   }

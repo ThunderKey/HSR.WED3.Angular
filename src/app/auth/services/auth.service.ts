@@ -11,6 +11,7 @@ import {SecurityTokenStore} from './credential-management';
 export class AuthService {
 
   public authenticatedUserChange: EventEmitter<Account> = new EventEmitter<Account>();
+  public registerFailed: EventEmitter<> = new EventEmitter<>();
 
   public get authenticatedUser(): Account {
     return this.authUser;
@@ -31,7 +32,11 @@ export class AuthService {
   public register(registerModel: RegistrationInfo): void {
     this.resource.register(registerModel).subscribe(
       (data: Account) => {
-        this.login(registerModel);
+        if(data) {
+          this.login(registerModel);
+        } else {
+          this.registerFailed.emit();
+        }
       }
     );
   }

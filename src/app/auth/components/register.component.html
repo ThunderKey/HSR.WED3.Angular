@@ -1,4 +1,6 @@
 <form #f="ngForm" (ngSubmit)="doRegister(f)">
+  <div *ngIf="errorMessage" class="callout alert">{{errorMessage}}</div>
+
   <div class="register-form grid-x grid-padding-x ">
     <div class="small-3 cell">
       <label for="firstname" class="text-right middle"> First name: </label>

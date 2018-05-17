@@ -19,9 +19,8 @@ export class LoginComponent implements OnInit {
   public login: string;
   public password: string;
 
-  public errorMessage: string;
-
   public isProcessing = false;
+  public errorMessage: string;
 
   constructor(private autSvc: AuthService, private navigationSvc: NavigationService, route: ActivatedRoute) {
     route.params.subscribe(
