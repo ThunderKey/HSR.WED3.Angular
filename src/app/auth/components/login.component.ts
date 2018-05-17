@@ -5,7 +5,7 @@ import {NgForm, MinLengthValidator} from '@angular/forms';
 import {NavigationService} from '../../core';
 
 import {AuthService} from '../services';
-import {LoginInfo} from '../models';
+import {LoginInfo, Account} from '../models';
 
 @Component({
   selector: 'wed-login',
@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
   constructor(private autSvc: AuthService, private navigationSvc: NavigationService, route: ActivatedRoute) {
     route.params.subscribe(
       (p: Params) => this.backUrl = p['backUrl']);
-    autSvc.authenticatedUserChange.subscribe((u: User) => {
+    autSvc.authenticatedUserChange.subscribe((u: Account) => {
       this.errorMessage = u == null ? 'Could not sign in' : null;
     });
   }
