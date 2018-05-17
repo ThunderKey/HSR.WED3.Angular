@@ -19,11 +19,16 @@ export class LoginComponent implements OnInit {
   public login: string;
   public password: string;
 
+  public errorMessage: string;
+
   public isProcessing = false;
 
   constructor(private autSvc: AuthService, private navigationSvc: NavigationService, route: ActivatedRoute) {
     route.params.subscribe(
       (p: Params) => this.backUrl = p['backUrl']);
+    autSvc.authenticatedUserChange.subscribe((u: User) => {
+      this.errorMessage = u == null ? 'Could not sign in' : null;
+    });
   }
 
   ngOnInit() {
