@@ -1,18 +1,21 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 
-import { DashboardComponent, TransactionsComponent } from './components';
+import {DashboardComponent, TransactionsComponent} from './components';
+import {AuthGuard} from '../auth/services';
 
 const appRoutes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
     children: [],
+    canActivate: [AuthGuard],
   },
   {
     path: 'transactions',
     component: TransactionsComponent,
     children: [],
+    canActivate: [AuthGuard],
   },
 ];
 
@@ -22,6 +25,9 @@ const appRoutes: Routes = [
   ],
   exports: [
     RouterModule
-  ]
+  ],
+  providers: [
+    AuthGuard,
+  ],
 })
 export class TransactionsRoutingModule {}

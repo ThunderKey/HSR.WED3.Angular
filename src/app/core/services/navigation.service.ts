@@ -16,6 +16,9 @@ export class NavigationService {
     this.goToUrl('/dashboard');
   }
 
-  constructor(private router: Router) {
+  public goToLogin(): void {
+    this.goToUrl('/welcome');
   }
+
+  constructor(private router: Router) {}
 }
