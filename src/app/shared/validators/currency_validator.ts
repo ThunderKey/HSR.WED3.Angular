@@ -14,7 +14,6 @@ import { Validator, AbstractControl, ValidationErrors, NG_VALIDATORS } from '@an
 export class CurrencyValidator implements Validator {
   validate(control: AbstractControl): ValidationErrors {
     const amount : number = parseFloat(control.value);
-    console.log(amount);
     if(amount < 0.05 || Math.round(amount*20)/20 !== amount) {
       return { hasError: true };
     }
