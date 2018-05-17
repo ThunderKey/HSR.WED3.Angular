@@ -1,5 +1,5 @@
 <nav>
-  <div *ngIf="autSvc.hasCredentials; then signedInMenu; else signedOutMenu"></div>
+  <div *ngIf="loggedIn(); then signedInMenu; else signedOutMenu"></div>
   <ng-template #signedInMenu>
     <div class="top-bar" id="main-nav">
       <div class="top-bar-left">

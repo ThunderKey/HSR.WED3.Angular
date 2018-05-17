@@ -10,6 +10,9 @@ import {AuthService} from './auth/services';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(private autSvc: AuthService, private navigationSvc: NavigationService) {
+  constructor(private autSvc: AuthService, private navigationSvc: NavigationService) {}
+
+  loggedIn(): boolean {
+    return this.autSvc.hasCredentials;
   }
 }
