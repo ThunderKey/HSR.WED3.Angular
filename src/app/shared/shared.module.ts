@@ -3,7 +3,7 @@ import {FormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 
 const EXPORTED_DECLARATIONS = [
-  // TODO: Add declarations here, if additional components/directives/... should be exported
+  // Declarations of additional components/directives/... that should be exported
 ];
 const INTERNAL_DECLARATIONS = [
   ...EXPORTED_DECLARATIONS
@@ -12,7 +12,7 @@ const INTERNAL_DECLARATIONS = [
 const EXPORTS = [
   ...EXPORTED_DECLARATIONS,
   CommonModule
-  // TODO: Add exports here, if additional modules should be exported
+  // Exports of additional modules
 ];
 
 @NgModule({

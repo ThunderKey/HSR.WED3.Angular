@@ -45,7 +45,7 @@ const EXPORTS = [
     // (Services, Tokens, Factories, ...) used from/within this Module; add either here or in forRoot();
     //  * Registers these Classes for the current Module; importing Modules will create new instances (for importing level and below)
     TransactionResourceService,
-  ]
+  ],
 })
 export class TransactionsModule {
   static forRoot(config?: {}): ModuleWithProviders {
