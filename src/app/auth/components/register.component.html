@@ -8,7 +8,7 @@
       <input required id="firstname" minlength="4" placeholder="First name" type="text" name="firstname" [(ngModel)]="firstname" #firstnameCtrl="ngModel" autocomplete="given-name">
       <div *ngIf="!firstnameCtrl.valid" class="help-text"> Please specify your first name. </div>
     </div>
-    
+
    <div class="small-3 cell">
      <label for="lastname" class="text-right middle"> Last name: </label>
    </div>
@@ -16,30 +16,30 @@
       <input required minlength="4" id="lastname" placeholder="Last name" type="text" name="lastname" [(ngModel)]="lastname" #lastnameCtrl="ngModel" autocomplete="family-name">
       <div *ngIf="!lastnameCtrl.valid" class="help-text"> Please specify your last name. </div>
     </div>
-  
+
    <div class="small-3 cell">
      <label for="username" class="text-right middle"> User name: </label>
    </div>
-  
+
     <div class="small-9 cell">
       <input required minlength="4" id="username" placeholder="User" type="text" name="login" [(ngModel)]="login" #loginCtrl="ngModel" autocomplete="username">
       <div *ngIf="!loginCtrl.valid" class="help-text"> Please specify your login, at least three characters. </div>
     </div>
-  
+
   <div class="small-3 cell">
      <label for="password" class="text-right middle"> Password: </label>
    </div>
-   
+
     <div class="small-9 cell">
 
       <input required minlength="4" id="password" placeholder="Password" type="password" name="password" [(ngModel)]="password" #passwordCtrl="ngModel" autocomplete="new-password">
       <div *ngIf="!passwordCtrl.valid" class="help-text"> Please specify your password, at least three characters. </div>
     </div>
-  
+
   <div class="small-3 cell">
      <label for="passwordconfirm" class="text-right middle"> Confirm Password: </label>
    </div>
-   
+
     <div class="small-9 cell">
       <input required id="passwordconfirn" [validateEqual]="this.password" placeholder="Password confirmation" type="password" name="passwordConfirm" [(ngModel)]="passwordConfirm" #passwordConfirmCtrl="ngModel" autocomplete="new-password">
       <div *ngIf="!passwordConfirmCtrl.valid" class="help-text"> Please confirm your password.</div>

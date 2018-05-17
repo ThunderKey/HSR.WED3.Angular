@@ -8,7 +8,7 @@
       <input required minlength="4" id="username" placeholder="User" type="text" name="login" [(ngModel)]="login" #loginCtrl="ngModel" autocomplete="username">
         <div *ngIf="!loginCtrl.valid" class="help-text"> Please specify your login, at least three characters. </div>
     </div>
-  
+
     <div class="small-3 cell">
       <label for="password" class="text-right middle"> Password: </label>
     </div>
