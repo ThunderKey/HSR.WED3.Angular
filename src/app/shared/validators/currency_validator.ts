@@ -3,7 +3,7 @@ import { Directive, Input, forwardRef } from '@angular/core';
 import { Validator, AbstractControl, ValidationErrors, NG_VALIDATORS } from '@angular/forms';
 
 @Directive({
-  selector: '[validateCurrency][ngModel]',
+  selector: '[wedValidateCurrency][ngModel]',
   providers: [{
     provide: NG_VALIDATORS,
     useExisting: forwardRef(() => CurrencyValidator),
