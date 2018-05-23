@@ -42,7 +42,7 @@
    </div>
 
     <div class="small-9 cell">
-      <input required id="passwordconfirn" [validateEqual]="this.password" placeholder="Password confirmation" type="password" name="passwordConfirm" [(ngModel)]="passwordConfirm" #passwordConfirmCtrl="ngModel" autocomplete="new-password">
+      <input required id="passwordconfirn" [wedValidateEqual]="this.password" placeholder="Password confirmation" type="password" name="passwordConfirm" [(ngModel)]="passwordConfirm" #passwordConfirmCtrl="ngModel" autocomplete="new-password">
       <div *ngIf="!passwordConfirmCtrl.valid" class="help-text"> Please confirm your password.</div>
     </div>
     <div class="small-9 cell small-offset-3">
