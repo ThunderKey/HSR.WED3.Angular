@@ -1,9 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import moment from '../../core/utils/moment_and_overrides';
 
-import {TransactionResourceService} from '../resources';
-import {Transaction} from '../models';
+import { TransactionResourceService } from '../resources';
+import { Transaction } from '../models';
 
 @Component({
   selector: 'wed-transactions',

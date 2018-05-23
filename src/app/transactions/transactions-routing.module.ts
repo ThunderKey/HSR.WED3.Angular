@@ -1,8 +1,8 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
-import {DashboardComponent, TransactionsComponent} from './components';
-import {AuthGuard} from '../auth/services';
+import { DashboardComponent, TransactionsComponent } from './components';
+import { AuthGuard } from '../auth/services';
 
 const appRoutes: Routes = [
   {

@@ -1,8 +1,8 @@
-import {HttpClient, HttpHeaders, HttpResponse, HttpParams} from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse, HttpParams } from '@angular/common/http';
 
-import {Observable} from 'rxjs/Observable';
+import { Observable } from 'rxjs/Observable';
 
-import {environment} from '../../../environments/environment';
+import { environment } from '../../../environments/environment';
 
 export abstract class ResourceBase {
 

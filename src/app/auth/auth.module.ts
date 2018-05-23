@@ -1,13 +1,13 @@
-import {NgModule, ModuleWithProviders} from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import {HTTP_INTERCEPTORS} from '@angular/common/http';
+import { NgModule, ModuleWithProviders } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
-import {AuthService, SecurityTokenStore} from './services';
-import {AuthResourceService, TokenInterceptor} from './resources';
+import { AuthService, SecurityTokenStore } from './services';
+import { AuthResourceService, TokenInterceptor } from './resources';
 
-import {LoginComponent, RegisterComponent} from './components';
-import {SharedModule} from '../shared/shared.module';
-import {EqualValidator} from '../shared/validators';
+import { LoginComponent, RegisterComponent } from './components';
+import { SharedModule } from '../shared/shared.module';
+import { EqualValidator } from '../shared/validators';
 
 const EXPORTED_DECLARATIONS = [
   LoginComponent, RegisterComponent

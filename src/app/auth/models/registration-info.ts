@@ -1,4 +1,4 @@
-import {LoginInfo} from './login-info';
+import { LoginInfo } from './login-info';
 
 export class RegistrationInfo extends LoginInfo {
   constructor(login: string,

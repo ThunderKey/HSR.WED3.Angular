@@ -1,10 +1,10 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
-import {NavigationService} from '../../core';
+import { NavigationService } from '../../core';
 
-import {AuthService} from '../services';
-import {Account} from '../models';
+import { AuthService } from '../services';
+import { Account } from '../models';
 
 
 @Component({

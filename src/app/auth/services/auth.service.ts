@@ -1,11 +1,11 @@
-import {Injectable, EventEmitter} from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 
-import {isBlank} from '../../core';
+import { isBlank } from '../../core';
 
-import {AuthResourceService} from '../resources';
-import {LoginInfo, RegistrationInfo, Credential, Account} from '../models';
+import { AuthResourceService } from '../resources';
+import { LoginInfo, RegistrationInfo, Credential, Account } from '../models';
 
-import {SecurityTokenStore} from './credential-management';
+import { SecurityTokenStore } from './credential-management';
 
 @Injectable()
 export class AuthService {

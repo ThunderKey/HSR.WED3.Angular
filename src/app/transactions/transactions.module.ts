@@ -1,18 +1,18 @@
-import {NgModule, ModuleWithProviders} from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import { NgModule, ModuleWithProviders } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
-import {SharedModule} from '../shared/shared.module';
+import { SharedModule } from '../shared/shared.module';
 
-import {TransactionsRoutingModule} from './transactions-routing.module';
+import { TransactionsRoutingModule } from './transactions-routing.module';
 import {
   DashboardComponent,
   CreateTransactionComponent,
   TransactionsComponent,
   TransactionTableComponent
 } from './components';
-import {TransactionResourceService} from './resources';
+import { TransactionResourceService } from './resources';
 
-import {CurrencyValidator} from '../shared/validators';
+import { CurrencyValidator } from '../shared/validators';
 
 const EXPORTED_DECLARATIONS = [
   DashboardComponent,

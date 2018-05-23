@@ -1,15 +1,15 @@
-import {Injectable} from '@angular/core';
-import {HttpClient, HttpResponse} from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 
-import {Observable} from 'rxjs/Observable';
-import {map, catchError} from 'rxjs/operators';
-import {of} from 'rxjs/observable/of';
+import { Observable } from 'rxjs/Observable';
+import { map, catchError } from 'rxjs/operators';
+import { of } from 'rxjs/observable/of';
 import moment from '../../core/utils/moment_and_overrides';
 
-import {ResourceBase} from '../../core';
+import { ResourceBase } from '../../core';
 
-import {Transaction} from '../models';
-import {Account} from '../../auth/models';
+import { Transaction } from '../models';
+import { Account } from '../../auth/models';
 
 
 

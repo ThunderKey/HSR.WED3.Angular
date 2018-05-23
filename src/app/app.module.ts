@@ -1,17 +1,17 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
-import {CoreModule} from './core/core.module';
-import {WelcomeModule} from './welcome/welcome.module';
-import {TransactionsModule} from './transactions/transactions.module';
+import { CoreModule } from './core/core.module';
+import { WelcomeModule } from './welcome/welcome.module';
+import { TransactionsModule } from './transactions/transactions.module';
 
-import {AppComponent} from './app.component';
-import {LogoutComponent} from './auth/components';
+import { AppComponent } from './app.component';
+import { LogoutComponent } from './auth/components';
 
-import {AppRoutingModule} from './app-routing.module';
-import {AuthModule} from './auth/auth.module';
+import { AppRoutingModule } from './app-routing.module';
+import { AuthModule } from './auth/auth.module';
 
 
 @NgModule({

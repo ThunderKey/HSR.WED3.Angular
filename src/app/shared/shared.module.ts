@@ -1,6 +1,6 @@
-import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import {CommonModule} from '@angular/common';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 const EXPORTED_DECLARATIONS = [
   // Declarations of additional components/directives/... that should be exported

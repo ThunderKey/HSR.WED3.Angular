@@ -1,11 +1,11 @@
-import {Component, EventEmitter, Output} from '@angular/core';
-import {NgForm} from '@angular/forms';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
-import {TransactionResourceService} from '../resources';
-import {Transaction} from '../models';
+import { TransactionResourceService } from '../resources';
+import { Transaction } from '../models';
 
-import {AuthService} from '../../auth/services';
-import {Account} from '../../auth/models';
+import { AuthService } from '../../auth/services';
+import { Account } from '../../auth/models';
 
 @Component({
   selector: 'wed-create-transaction',

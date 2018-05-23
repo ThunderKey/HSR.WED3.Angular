@@ -1,10 +1,10 @@
-import {Component, OnInit} from '@angular/core';
-import {NgForm, MinLengthValidator} from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { NgForm, MinLengthValidator } from '@angular/forms';
 
-import {NavigationService} from '../../core';
+import { NavigationService } from '../../core';
 
-import {AuthService} from '../services';
-import {RegistrationInfo} from '../models';
+import { AuthService } from '../services';
+import { RegistrationInfo } from '../models';
 
 @Component({
   selector: 'wed-register',

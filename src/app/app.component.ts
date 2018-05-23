@@ -1,8 +1,8 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
-import {NavigationService} from './core/services';
+import { NavigationService } from './core/services';
 
-import {AuthService} from './auth/services';
+import { AuthService } from './auth/services';
 
 @Component({
   selector: 'app-root',

@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import {TransactionResourceService} from '../resources';
-import {Transaction} from '../models';
+import { TransactionResourceService } from '../resources';
+import { Transaction } from '../models';
 
 @Component({
   selector: 'wed-dashboard',

@@ -1,11 +1,11 @@
-import {ActivatedRoute, Params} from '@angular/router';
-import {Component, OnInit} from '@angular/core';
-import {NgForm, MinLengthValidator} from '@angular/forms';
+import { ActivatedRoute, Params } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { NgForm, MinLengthValidator } from '@angular/forms';
 
-import {NavigationService} from '../../core';
+import { NavigationService } from '../../core';
 
-import {AuthService} from '../services';
-import {LoginInfo, Account} from '../models';
+import { AuthService } from '../services';
+import { LoginInfo, Account } from '../models';
 
 @Component({
   selector: 'wed-login',

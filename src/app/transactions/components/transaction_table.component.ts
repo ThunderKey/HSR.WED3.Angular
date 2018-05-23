@@ -1,6 +1,6 @@
-import {Component, Input} from '@angular/core';
+import { Component, Input } from '@angular/core';
 
-import {Transaction} from '../models';
+import { Transaction } from '../models';
 
 @Component({
   selector: 'wed-transaction-table',
