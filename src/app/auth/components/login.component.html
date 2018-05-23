@@ -1,4 +1,5 @@
-<form #f="ngForm" (ngSubmit)="doLogin(f)">
+<h2> Welcome to the Finance Portal</h2>
+ <form #f="ngForm" (ngSubmit)="doLogin(f)">
   <div *ngIf="errorMessage" class="callout alert">{{errorMessage}}</div>
 
  <div class="register-form grid-x grid-padding-x">
@@ -7,7 +8,7 @@
     </div>
     <div class="small-9 cell">
       <input required minlength="4" id="username" placeholder="User" type="text" name="login" [(ngModel)]="login" #loginCtrl="ngModel" autocomplete="username">
-        <div *ngIf="!loginCtrl.valid" class="help-text"> Please specify your login, at least three characters. </div>
+        <div *ngIf="!loginCtrl.valid" class="help-text"> Please specify your login, at least four characters. </div>
     </div>
 
     <div class="small-3 cell">
@@ -15,7 +16,7 @@
     </div>
     <div class="small-9 cell">
       <input required minlength="4" id="password" placeholder="Password" type="password" name="password" [(ngModel)]="password" #passwordCtrl="ngModel" autocomplete="current-password">
-      <div *ngIf="!passwordCtrl.valid" class="help-text"> Please specify your password, at least three characters. </div>
+      <div *ngIf="!passwordCtrl.valid" class="help-text"> Please specify your password, at least four characters. </div>
     </div>
     <div class="small-9 cell small-offset-3">
       <button type="submit" [disabled]="!f.valid" class="button">Login</button>
