@@ -24,7 +24,7 @@ export class LogoutComponent implements OnInit {
     this.autSvc.authenticatedUserChange.subscribe(
       (credentials) => {
         if (!credentials) {
-          this.navigationSvc.goToHome();
+          this.navigationSvc.goToLogin();
         }
       });
   }
