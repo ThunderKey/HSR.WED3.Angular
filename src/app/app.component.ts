@@ -5,7 +5,7 @@ import { NavigationService } from './core/services';
 import { AuthService } from './auth/services';
 
 @Component({
-  selector: 'app-root',
+  selector: 'wed-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
