@@ -32,7 +32,7 @@ export class AuthService {
   public register(registerModel: RegistrationInfo): void {
     this.resource.register(registerModel).subscribe(
       (data: Account) => {
-        if(data) {
+        if (data) {
           this.login(registerModel);
         } else {
           this.registerFailed.emit(null);
@@ -41,7 +41,7 @@ export class AuthService {
     );
   }
 
-  public login(loginModel: LoginInfo):void {
+  public login(loginModel: LoginInfo): void {
     this.resource.login(loginModel).subscribe(
       (data: Credential) => {
         this.tokenStore.storedValue = data;

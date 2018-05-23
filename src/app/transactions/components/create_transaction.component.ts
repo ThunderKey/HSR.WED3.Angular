@@ -25,8 +25,9 @@ export class CreateTransactionComponent {
   @Output() transactionAdded: EventEmitter<Transaction> = new EventEmitter();
 
   constructor(private resource: TransactionResourceService, private auth: AuthService) {
-    if(auth.authenticatedUser)
+    if (auth.authenticatedUser) {
       this.sourceNr = auth.authenticatedUser.accountNr;
+    }
   }
 
   public createTransaction(f: NgForm): boolean {
@@ -34,7 +35,7 @@ export class CreateTransactionComponent {
       this.errorMessage = this.successMessage = null;
       this.resource.createTransaction(this.targetNr, this.amount).subscribe(
         (transaction: Transaction) => {
-          if(transaction) {
+          if (transaction) {
             this.targetNr = null;
             this.amount = null;
             this.targetAccount = null;
@@ -48,8 +49,8 @@ export class CreateTransactionComponent {
     }
     return false;
   }
-  public setTargetAccount(){
-    if (this.targetNr){
+  public setTargetAccount() {
+    if (this.targetNr) {
       this.resource.getAccount(this.targetNr).subscribe(
         (account: Account) => {
           this.targetAccount = account;

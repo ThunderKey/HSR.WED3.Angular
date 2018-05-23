@@ -10,7 +10,7 @@ import { Transaction } from '../models';
 })
 export class DashboardComponent implements OnInit {
 
-  public transactions: Array<Transaction> = []
+  public transactions: Array<Transaction> = [];
 
   constructor(private resource: TransactionResourceService) {
   }

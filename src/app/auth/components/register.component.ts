@@ -23,7 +23,7 @@ export class RegisterComponent implements OnInit {
 
   constructor(private autSvc: AuthService, private navigationSvc: NavigationService) {
     autSvc.registerFailed.subscribe(() => {
-      this.errorMessage = "Could not register this account";
+      this.errorMessage = 'Could not register this account';
     });
   }
 

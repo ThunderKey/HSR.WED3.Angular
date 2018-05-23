@@ -9,8 +9,9 @@ export class AuthGuard implements CanActivate {
   constructor(private autSvc: AuthService, private navigationSvc: NavigationService) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    if(this.autSvc.hasCredentials)
+    if (this.autSvc.hasCredentials) {
       return true;
+    }
 
     this.navigationSvc.goToLogin();
     return false;

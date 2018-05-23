@@ -24,9 +24,9 @@ export class TransactionsComponent implements OnInit {
 
   constructor(private resource: TransactionResourceService) {
     this.month = new Date().getMonth();
-    let currentYear = this.year = new Date().getFullYear();
-    for(let i = 0; i < 3; i++) {
-      let year = currentYear - i;
+    const currentYear = this.year = new Date().getFullYear();
+    for (let i = 0; i < 3; i++) {
+      const year = currentYear - i;
       this.years.push({text: year, value: year});
     }
   }
@@ -36,8 +36,8 @@ export class TransactionsComponent implements OnInit {
   }
 
   private updateTransactions() {
-    let start = moment(new Date(this.year, this.month, 1));
-    let end = start.clone().endOf('month');
+    const start = moment(new Date(this.year, this.month, 1));
+    const end = start.clone().endOf('month');
     this.resource.getTransactions(start, end).subscribe(
       (data: Array<Transaction>) => {
         this.transactions = data;

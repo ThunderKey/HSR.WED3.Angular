@@ -11,8 +11,6 @@ import { ResourceBase } from '../../core';
 import { Transaction } from '../models';
 import { Account } from '../../auth/models';
 
-
-
 @Injectable()
 export class TransactionResourceService extends ResourceBase {
   constructor(http: HttpClient) {
@@ -35,8 +33,8 @@ export class TransactionResourceService extends ResourceBase {
     return this.handleTransaction(this.post('/accounts/transactions', {target, amount}));
   }
 
-  public getAccount(accountNr: string):Observable<Account>{
-    let request = this.get(`/accounts/${accountNr}`);
+  public getAccount(accountNr: string): Observable<Account> {
+    const request = this.get(`/accounts/${accountNr}`);
     return request.pipe(
       map((response: any) => {
         if (response) {
