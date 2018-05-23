@@ -16,8 +16,8 @@
       <td>{{transaction.date.format('LLL')}}</td>
       <td>{{transaction.source}}</td>
       <td>{{transaction.target}}</td>
-      <td>{{transaction.amount}}</td>
-      <td>{{transaction.total}}</td>
+      <td>{{transaction.amount |number : '0.2' }}</td>
+      <td>{{transaction.total |number : '0.2'}}</td>
     </tr>
   </tbody>
 </table>
